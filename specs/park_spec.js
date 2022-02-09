@@ -125,8 +125,12 @@ describe('Park', function() {
     park.addDinosaur(dinosaur5);
     park.sortByDiet();
     const actual = park.dinoDiets;
-    const expected = {};
-    assert.strictEqual(actual, expected);
+    const expected = {
+      carnivore : 4,
+      herbivore : 1,
+      omnivore : 0
+    };
+    assert.deepStrictEqual(actual, expected);
   })
 
 });

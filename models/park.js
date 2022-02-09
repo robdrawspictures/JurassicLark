@@ -66,6 +66,8 @@ Park.prototype.totalDailyVisitors = function(){
     return count;
 };
 
+// Ask Steve why const count didn't work but let did.
+
 Park.prototype.annualVisitorCount = function(){
     let annualVisitors = this.totalDailyVisitors() * 365;
     return annualVisitors;
@@ -76,14 +78,24 @@ Park.prototype.calculateAnnualRevenue = function(){
     return annualRevenue;
 };
 
+// Park.prototype.sortByDiet = function(){
+//     for (var dinosaur in this.dinoCollection){
+//         if (dinosaur.diet === this.dinoDiets.){
+//             this.dinoDiets. += 1
+//         };
+//     };
+// };
+
 Park.prototype.sortByDiet = function(){
-    for (var dinosaur in this.dinoCollection){
-        if (dinosaur.diet === this.dinoDiets.){
-            this.dinoDiets. += 1
+    for (let dinosaur of this.dinoCollection){
+        if (dinosaur.diet === 'carnivore'){
+            this.dinoDiets.carnivore += 1
+        } else if (dinosaur.diet === 'herbivore'){
+            this.dinoDiets.herbivore += 1
+        } else if (dinosaur.diet === 'omnivore'){
+            this.dinoDiets.omnivore += 1
         };
     };
 };
-
-// Ask Steve why const count didn't work but let did.
 
 module.exports = Park;
